@@ -43,7 +43,55 @@
 </html>
 
 
+<!-- code from chatgpt
+Here's an example HTML code that you can use to create a page with Live2D.
 
+First, you'll need to include the Live2D JavaScript library in your HTML. 
+You can do this by adding the following code to the head of your HTML document:
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@live2d/cubism-sdk-web"></script>
+</head>
+
+Next, you'll need to create a canvas element that will be used to render the Live2D model. 
+You can do this by adding the following code to the body of your HTML document:
+
+<body>
+  <canvas id="live2d" width="300" height="300"></canvas>
+</body>
+
+Finally, you'll need to add some JavaScript code to load the Live2D model 
+and render it on the canvas. Here's an example of how you can do this:
+
+<script>
+  const model = new Live2DModel("path/to/your/model.json");
+  model.load().then(() => {
+    const canvas = document.getElementById("live2d");
+    const context = canvas.getContext("2d");
+    const renderer = new Live2DRenderer(context);
+
+    function render() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      model.update();
+      renderer.drawModel(model);
+      requestAnimationFrame(render);
+    }
+
+    render();
+  });
+</script>
+
+In this example, you'll need to replace "path/to/your/model.json" with the path to your actual Live2D model file.
+
+as an AI language model, I'm not able to provide you with Live2D model files. 
+Live2D models are typically created by artists and animators using the Live2D Cubism Editor, 
+which is a commercial software program.
+If you're interested in using Live2D on your website or application, 
+you may want to consider purchasing or commissioning a Live2D model from a professional artist or studio. 
+Alternatively, you may be able to find free or open-source Live2D models online, 
+but please be aware that the quality and legality of these models may vary.
+
+-->
 
 
 
